@@ -25,7 +25,7 @@ final class MemoProgramTest {
     assertEquals(solanaAccounts.invokedMemoProgramV2(), memoIx.programId());
     final var accounts = memoIx.accounts();
     assertEquals(1, accounts.size());
-    assertEquals(feePayer, accounts.getFirst().publicKey());
+    assertEquals(feePayer, accounts.get(0).publicKey());
     assertEquals("Sava", new String(memoIx.data()));
 
     final var transaction = Transaction.createTx(feePayer, memoIx);
@@ -37,7 +37,7 @@ final class MemoProgramTest {
 
     final var instructions = transaction.instructions();
     assertEquals(1, instructions.size());
-    assertEquals(memoIx, instructions.getFirst());
+    assertEquals(memoIx, instructions.get(0));
 
     final var serialized = transaction.serialized();
 

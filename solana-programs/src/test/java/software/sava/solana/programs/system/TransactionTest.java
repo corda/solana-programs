@@ -34,13 +34,13 @@ final class TransactionTest {
     final var accounts = instruction.accounts();
     assertEquals(2, accounts.size());
 
-    var account = accounts.getFirst();
+    var account = accounts.get(0);
     assertEquals(fromPublicKey, account.publicKey());
     assertFalse(account.feePayer());
     assertTrue(account.signer());
     assertTrue(account.write());
 
-    account = accounts.getLast();
+    account = accounts.get(1);
     assertEquals(toPublicKey, account.publicKey());
     assertFalse(account.feePayer());
     assertFalse(account.signer());

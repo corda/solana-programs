@@ -12,7 +12,7 @@ public sealed interface FeeType extends RustEnum permits
     FeeType.SolWithdrawal {
 
 
-  record SolReferral(int val) implements EnumInt8, FeeType {
+  record SolReferral(int val) implements RustEnum.EnumInt8, FeeType {
 
     @Override
     public int ordinal() {
@@ -20,7 +20,7 @@ public sealed interface FeeType extends RustEnum permits
     }
   }
 
-  record StakeReferral(int val) implements EnumInt8, FeeType {
+  record StakeReferral(int val) implements RustEnum.EnumInt8, FeeType {
 
     @Override
     public int ordinal() {
@@ -28,7 +28,7 @@ public sealed interface FeeType extends RustEnum permits
     }
   }
 
-  record Epoch(StakePoolState.Fee val) implements BorshEnum, FeeType {
+  record Epoch(StakePoolState.Fee val) implements RustEnum.BorshEnum, FeeType {
 
     @Override
     public int ordinal() {
@@ -36,7 +36,7 @@ public sealed interface FeeType extends RustEnum permits
     }
   }
 
-  record StakeWithdrawal(StakePoolState.Fee val) implements BorshEnum, FeeType {
+  record StakeWithdrawal(StakePoolState.Fee val) implements RustEnum.BorshEnum, FeeType {
 
     @Override
     public int ordinal() {
@@ -44,7 +44,7 @@ public sealed interface FeeType extends RustEnum permits
     }
   }
 
-  record SolDeposit(StakePoolState.Fee val) implements BorshEnum, FeeType {
+  record SolDeposit(StakePoolState.Fee val) implements RustEnum.BorshEnum, FeeType {
 
     @Override
     public int ordinal() {
@@ -52,7 +52,7 @@ public sealed interface FeeType extends RustEnum permits
     }
   }
 
-  record StakeDeposit(StakePoolState.Fee val) implements BorshEnum, FeeType {
+  record StakeDeposit(StakePoolState.Fee val) implements RustEnum.BorshEnum, FeeType {
 
     @Override
     public int ordinal() {
@@ -60,7 +60,7 @@ public sealed interface FeeType extends RustEnum permits
     }
   }
 
-  record SolWithdrawal(StakePoolState.Fee val) implements BorshEnum, FeeType {
+  record SolWithdrawal(StakePoolState.Fee val) implements RustEnum.BorshEnum, FeeType {
 
     @Override
     public int ordinal() {

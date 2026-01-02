@@ -36,8 +36,8 @@ final class TokenProgramTests {
 
     var accounts = initMintIx.accounts();
     assertEquals(2, accounts.size());
-    assertEquals(AccountMeta.createWrite(mint), accounts.getFirst());
-    assertEquals(solAccounts.readRentSysVar(), accounts.getLast());
+    assertEquals(AccountMeta.createWrite(mint), accounts.get(0));
+    assertEquals(solAccounts.readRentSysVar(), accounts.get(1));
 
     assertArrayEquals(expectedData, initMintIx.data());
 
@@ -54,7 +54,7 @@ final class TokenProgramTests {
 
     accounts = initMintIx.accounts();
     assertEquals(1, accounts.size());
-    assertEquals(AccountMeta.createWrite(mint), accounts.getFirst());
+    assertEquals(AccountMeta.createWrite(mint), accounts.get(0));
 
     assertArrayEquals(expectedData, initMintIx.data());
 
@@ -72,8 +72,8 @@ final class TokenProgramTests {
 
     accounts = initMintIx.accounts();
     assertEquals(2, accounts.size());
-    assertEquals(AccountMeta.createWrite(mint), accounts.getFirst());
-    assertEquals(solAccounts.readRentSysVar(), accounts.getLast());
+    assertEquals(AccountMeta.createWrite(mint), accounts.get(0));
+    assertEquals(solAccounts.readRentSysVar(), accounts.get(1));
 
     assertArrayEquals(expectedData, initMintIx.data());
 
@@ -90,7 +90,7 @@ final class TokenProgramTests {
 
     accounts = initMintIx.accounts();
     assertEquals(1, accounts.size());
-    assertEquals(AccountMeta.createWrite(mint), accounts.getFirst());
+    assertEquals(AccountMeta.createWrite(mint), accounts.get(0));
 
     assertArrayEquals(expectedData, initMintIx.data());
   }

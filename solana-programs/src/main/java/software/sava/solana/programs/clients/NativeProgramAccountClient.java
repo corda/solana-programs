@@ -16,7 +16,6 @@ import software.sava.solana.programs.token.AssociatedTokenProgram;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.SequencedCollection;
 import java.util.concurrent.CompletableFuture;
 
 public interface NativeProgramAccountClient {
@@ -538,10 +537,10 @@ public interface NativeProgramAccountClient {
 
   Instruction freezeLookupTable(final PublicKey tableAccount);
 
-  Instruction extendLookupTable(final PublicKey tableAccount, final SequencedCollection<PublicKey> newAddresses);
+  Instruction extendLookupTable(final PublicKey tableAccount, final Collection<PublicKey> newAddresses);
 
   default Instruction extendLookupTable(final PublicKey tableAccount, final List<PublicKey> newAddresses) {
-    return extendLookupTable(tableAccount, (SequencedCollection<PublicKey>) newAddresses);
+    return extendLookupTable(tableAccount, (Collection<PublicKey>) newAddresses);
   }
 
   Instruction deactivateLookupTable(final PublicKey tableAccount);

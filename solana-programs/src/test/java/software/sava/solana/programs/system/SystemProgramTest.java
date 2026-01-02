@@ -28,8 +28,8 @@ final class SystemProgramTest {
 
     assertEquals(MAIN_NET.invokedSystemProgram(), instruction.programId());
     assertEquals(2, instruction.accounts().size());
-    assertEquals(fromPublicKey, instruction.accounts().getFirst().publicKey());
-    assertEquals(toPublicKey, instruction.accounts().getLast().publicKey());
+    assertEquals(fromPublicKey, instruction.accounts().get(0).publicKey());
+    assertEquals(toPublicKey, instruction.accounts().get(1).publicKey());
 
     assertArrayEquals(new byte[]{2, 0, 0, 0, -72, 11, 0, 0, 0, 0, 0, 0}, instruction.data());
   }
